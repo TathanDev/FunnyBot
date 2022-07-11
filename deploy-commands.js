@@ -3,8 +3,19 @@ const path = require('node:path');
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 const { clientId, guildId, token } = require('./config.json');
+const { SlashCommandBuilder } = require('@discordjs/builders');
 
-const commands = [];
+
+
+/** Tycoon Commands */
+const commands = [
+	new SlashCommandBuilder().setName('start').setDescription('Commence ton aventure!'),
+	//new SlashCommandBuilder().setName('server').setDescription('Replies with server info!'),
+	//new SlashCommandBuilder().setName('user').setDescription('Replies with user info!'),
+]
+	.map(command => command.toJSON());
+
+
 const commandsPath = path.join(__dirname, 'commands');
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
 

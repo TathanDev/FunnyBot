@@ -7,6 +7,7 @@ const {
 
 const BlaguesAPI = require('blagues-api');
 const blagues = new BlaguesAPI('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjI2NDQ5MDEzNDIzNzM0Nzg1IiwibGltaXQiOjEwMCwia2V5IjoiN0pZcWIyTUw1czQwNEhycW92T1d3dGpuS1gzQmNPTk10eFRXTlVDbWk1b3dKcFdRUUQiLCJjcmVhdGVkX2F0IjoiMjAyMi0wNy0xMFQxNDoyNzozOSswMDowMCIsImlhdCI6MTY1NzQ2MzI1OX0.lYWNff3gvdAmSks71cNvfkILqYk_piQedRx9iUWlcpw');
+const bdd = require('./bdd.json');
 
 
  
