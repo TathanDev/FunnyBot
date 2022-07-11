@@ -13,7 +13,7 @@ const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('
 
 bot.once('ready', () => {
 	console.log('Ready !');
-	bot.user.setActivity('activity', { type: 'WATCHING' });
+	bot.user.setActivity('des Memes', { type: 'WATCHING' });
 
 });
 
