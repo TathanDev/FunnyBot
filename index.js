@@ -9,13 +9,12 @@ bot.commands = new Collection();
 const commandsPath = path.join(__dirname, 'commands');
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
 
-
-
-
 //const bot = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
 bot.once('ready', () => {
-	console.log('Ready!');
+	console.log('Ready !');
+	bot.user.setActivity('activity', { type: 'WATCHING' });
+
 });
 
 
@@ -37,7 +36,8 @@ bot.on('interactionCreate', async interaction => {
 		await command.execute(interaction);
 	} catch (error) {
 		console.error(error);
-		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+		await interaction.reply({ content: "Bruh, tu as cassé la matrice.n\Je te conseille de MP TATHAN#0007", ephemeral: true });        
+	
 	}
 });
 
