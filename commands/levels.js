@@ -42,8 +42,8 @@ module.exports = {
 		.setName('level')
 		.setDescription('Information about the options provided.')
 		.addStringOption(option => 
-            option.setName('categorie')
-            .setDescription('La Catégorie de la Blague')
+            option.setName('level')
+            .setDescription('Le niveau de votre aventure')
             .setRequired(true)
             .addChoices(
             { name: "Niveau 1", value: "1" },
@@ -59,7 +59,7 @@ module.exports = {
 
 	async execute(interaction) {
 
-        const value = interaction.options.getString('categorie');
+        const value = interaction.options.getString('level');
 
 
 
@@ -74,7 +74,7 @@ module.exports = {
     
             } else if (bdd["adventure-level"][interaction.member.id] == "1") { 
     
-                const row = new MessageActionRow()
+                const level1row = new MessageActionRow()
                 .addComponents(
                     new MessageButton()
                         .setCustomId('level1-forest')
@@ -96,7 +96,7 @@ module.exports = {
                 );
 
 
-                const level1 = new MessageEmbed()
+            const level1 = new MessageEmbed()
             .setColor("36FF00")
             .setTitle("Niveau 1")
             .setTimestamp()
@@ -114,7 +114,7 @@ module.exports = {
 
 
 
-                await interaction.reply({ephemeral: true, embeds: [level1], components: [row]});
+                await interaction.reply({ephemeral: true, embeds: [level1], components: [level1row]});
     
          
                 
@@ -134,17 +134,59 @@ module.exports = {
 
             } else if  (!bdd["adventure-level"][interaction.member.id] == "2") {
 
-                await interaction.reply({ content:'Vous avez déjà réussi ce niveau ! Vous pouvez commencer le niveau 2', ephemeral: true});
+                await interaction.reply({ content:'Vous avez déjà réussi ce niveau ! Vous pouvez commencer le niveau 3', ephemeral: true});
 
 
-            } else if (bdd["adventure-level"][interaction.member.id] == "2") {
-
-            }
+            } else {
 
 
+                const level2row = new MessageActionRow()
+                .addComponents(
+                    new MessageButton()
+                        .setCustomId('level2-forest')
+                        .setLabel('Aller dans la fôret')
+                        .setEmoji("🌲")
+                        .setStyle('PRIMARY'),
+
+                        new MessageButton()
+                        .setCustomId('level2-river')
+                        .setLabel('Traverser la rivière')
+                        .setEmoji("🌊")
+                        .setStyle('PRIMARY'),
+                );
+
+                const level2 = new MessageEmbed()
+                .setColor("36FF00")
+                .setTitle("Niveau 1")
+                .setTimestamp()
+                .setDescription("Le lendemain matin, vous decidez de partir chercher votre chêvre...")
+                .addField("Vous prenez un sac avec des gâteaux, une lampe torche et... c'est tout.")
+                .addField("Vous reprenez alors le même chemin qu'hier et vous avez donc le même dilem que l'autre soir.")
+                .addFields(
+                    { name: 'Choix', value: "deux choix sont possibles." },
+                    { name: '**1**', value: "Chercher votre chêvre dans la forêt. 🌲", inline: true },
+                    { name: '**2**', value: "Traverser la rivière pour chercher votre chêvre. 🌊", inline: true },
+    
+    
+                )
+    
+    
+    
+    
+                    await interaction.reply({ephemeral: true, embeds: [level2], components: [level2row]});
+    
+
+            } 
+            
 
 
 
+
+
+
+    } else {
+
+        await interaction.reply({ephemeral: true, content: "Under Contruct"});
 
     }
 

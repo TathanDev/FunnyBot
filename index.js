@@ -113,6 +113,32 @@ bot.on('interactionCreate', async interaction => {
 				bdd["coins-user"][interaction.member.id] = 5;
 				Savebdd();
 
+
+			}
+
+
+		//Level 2	
+		} else if (interaction.customId.includes('level2-')) {
+			if (interaction.customId.includes("river")) {
+
+			await interaction.reply({ content: "Vous pensez vraiment qu'il faut traverser une rivière seul ?\nMaintenant tu le sait. Mais tu vient de te noyer donc tu doit recommencer :). Try Again ", ephemeral: true});
+
+
+			} else if (interaction.customId.includes("forest")) {
+
+				const forest = new MessageEmbed()
+				.setColor("36FF00")
+				.setTitle("Vous decidez d'avancer dans la fôret.")
+				.setTimestamp()
+				.setDescription("Une trentaine de minutes après être entré dans la forêt, vous arrêtez vos recherches et apercevez le chemin de randonnée se finir juste devant... la rivière !")
+				.addField("Après s'être approché de cette dernière, tu y découvre les restes d'un anciens ponts. Tous les espoirs sont perdus ? Non ! En effet, à quelques mettre de toi, il y a une petite échope se nommant *Au Bon Bateau*.")
+
+
+				await interaction.reply({ embeds: [forest], ephemeral: true, contents: []});
+
+
+			}
+
 	
 
 
@@ -121,8 +147,7 @@ bot.on('interactionCreate', async interaction => {
 		}
 
 
-	}
-} catch (error) {
+	} catch (error) {
 		console.error(error);
 	
 
