@@ -23,10 +23,8 @@ module.exports = {
             .setColor("GREEN")
             .setTitle("Coins")
             .setTimestamp()
-            .addFields(
-		        { name: 'Tu as ', value:  `**${bdd["coins-user"][interaction.member.id]}**`},
-            )
-
+            .setDescription("Tu as **" + `${bdd["coins-user"][interaction.member.id]}` + "** :coin:")
+            
     await interaction.reply({ephemeral: true, embeds: [coins]});
 
     

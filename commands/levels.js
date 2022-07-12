@@ -157,11 +157,9 @@ module.exports = {
 
                 const level2 = new MessageEmbed()
                 .setColor("36FF00")
-                .setTitle("Niveau 1")
+                .setTitle("Niveau 2")
                 .setTimestamp()
-                .setDescription("Le lendemain matin, vous decidez de partir chercher votre chêvre...")
-                .addField("Vous prenez un sac avec des gâteaux, une lampe torche et... c'est tout.")
-                .addField("Vous reprenez alors le même chemin qu'hier et vous avez donc le même dilem que l'autre soir.")
+                .setDescription("Le lendemain matin, vous decidez de partir chercher votre chêvre...\nVous prenez un sac avec des gâteaux, une lampe torche et... c'est tout. Vous reprenez alors le même chemin qu'hier et vous avez donc le même dilem que l'autre soir.")
                 .addFields(
                     { name: 'Choix', value: "deux choix sont possibles." },
                     { name: '**1**', value: "Chercher votre chêvre dans la forêt. 🌲", inline: true },
