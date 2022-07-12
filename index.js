@@ -1,4 +1,4 @@
-const { Client, Collection, Intents } = require('discord.js');
+const { Client, Collection, Intents, MessageEmbed} = require('discord.js');
 const { token } = require('./config.json');
 const fs = require('node:fs');
 const path = require('node:path');
@@ -64,18 +64,77 @@ bot.on('interactionCreate', async interaction => {
 			await interaction.reply({ content: "Votre aventure a déjà commencer !", ephemeral: true});
 
 		}
-	}
+
+
+
+
+
+			
+		}
+
+
+
+		});
+
+
+
+//Buttons
+bot.on('interactionCreate', async interaction => {
+
+
+	try {
+		
+	if (interaction.isButton()) {
+
+		//Level 1
+		if (interaction.customId.includes('level1-')) {
+			if (interaction.customId.includes("river")) {
+
+			await interaction.reply({ content: "Vous pensez vraiment qu'il faut traverser une rivière seul ?\nMaintenant tu le sait. Mais tu vient de te noyer donc tu doit recommencer :). Try Again ", ephemeral: true});
+
+
+			} else if (interaction.customId.includes("forest")) {
+
+				await interaction.reply({ content: "Vous pensez vraiment qu'il faut traverser une forêt seul ? Juste avant la nuit !?\nMaintenant tu le sait. Mais tu vient de mourir donc tu doit recommencer :). Try Again ", ephemeral: true});
+
+
+			} else if (interaction.customId.includes("success")) {
+				
+				const level1Success = new MessageEmbed()
+				.setColor("36FF00")
+				.setTitle("Niveau 1 Réussi !")
+				.setTimestamp()
+				.setDescription("🎉 **Félicitation**!\n Tu as réussi ce niveau! Cela se voit que tu n'es pas un inconscient. Tu peux maintenant continuer ton aventure en quête de ta chêvre !! Pour te récompenser de ton acte, tes parents te donnent **5** plidux :coin: (Ils seront utiles dans la suite de ta quête.).\n")
+				
+
+				await interaction.reply({ ephemeral: true, embeds: [level1Success]});
+				//Level + 1
+				bdd["adventure-level"][interaction.member.id] = "2"
+				bdd["coins-user"][interaction.member.id] = 5;
+				Savebdd();
+
 	
 
 
-	 else if (commandName === 'server') {
-		await interaction.reply('Server info.');
-	} else if (commandName === 'user') {
-		await interaction.reply('User info.');
+
+			}
+		}
+
+
 	}
+} catch (error) {
+		console.error(error);
+	
+
+} });
+
+		
+		
 
 
-});
+
+
+	
 
 /** Functions */
 function Savebdd() {

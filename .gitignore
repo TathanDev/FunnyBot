@@ -108,3 +108,6 @@ dist
 config.json
 config.json
 config.json
+commands/bdd.json
+launch.bat
+commands/bdd.json
