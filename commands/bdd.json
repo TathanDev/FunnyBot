@@ -1,6 +1,14 @@
 {
     "statut-adventure": {},
+    "coins-user": {
+        "626449013423734785": 5
+    },
     "adventure-level": {
-        "626449013423734785": "1"
+        "626449013423734785": "2"
+    },
+    "xp-utilisateurs": {
+    },
+    "coins-utilisateurs":{
+        
     }
 }
