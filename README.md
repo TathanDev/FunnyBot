@@ -29,3 +29,4 @@ Si vous remarquez un bug, ouvrez une [issues](https://github.com/TathanDev/Funny
 ## Liste des bugs 
 - Le RP n'est pas finit.
 - Le /start est obligatoire pour commencer l'aventure
+- Les fautes d'Orthographes
