@@ -13,12 +13,10 @@ const bdd = require('./bdd.json');
 /** Functions */
 function Savebdd() {
     fs.writeFile("./bdd.json", JSON.stringify(bdd, null, 4), (err) => {
-        if (err) message.channel.send("Une erreur est survenue.");
+        if (err) console.log("Une erreur est survenue.");
     });
 }
 
-/** Embeds */
-//Level 1
 
 
 
@@ -67,12 +65,12 @@ module.exports = {
 
 
 
-            if (!bdd["adventure-level"][interaction.member.id] == "1") {
+            if (bdd["adventure-level"][interaction.member.id] !== "1") {
 
                 await interaction.reply({ content:'Vous avez déjà réussi ce niveau ! Vous pouvez commencer le niveau 2', ephemeral: true});
     
     
-            } else if (bdd["adventure-level"][interaction.member.id] == "1") { 
+            } else if (bdd["adventure-level"][interaction.member.id] = "1") { 
     
                 const level1row = new MessageActionRow()
                 .addComponents(
@@ -132,12 +130,12 @@ module.exports = {
 
                 await interaction.reply({ content: "Vous devez d'abord faire le niveau 1.", ephemeral: true});
 
-            } else if  (!bdd["adventure-level"][interaction.member.id] == "2") {
+            } else if  (bdd["adventure-level"][interaction.member.id] != "2") {
 
                 await interaction.reply({ content:'Vous avez déjà réussi ce niveau ! Vous pouvez commencer le niveau 3', ephemeral: true});
 
 
-            } else {
+            } else if  (bdd["adventure-level"][interaction.member.id] == "2") {
 
 
                 const level2row = new MessageActionRow()
