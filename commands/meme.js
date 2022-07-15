@@ -40,7 +40,7 @@ module.exports = {
             const memeEmbed = new MessageEmbed()
             .setColor("GREEN")
             .setTitle("MEME")
-            .setAuthor({ name: 'Plido'})
+            .setAuthor({ name: 'TATHAN'})
             .setTimestamp()
             .setImage(url);
 

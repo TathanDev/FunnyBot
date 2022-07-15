@@ -56,7 +56,7 @@ module.exports = {
             const darkEmbed = new MessageEmbed()
 	        .setColor("BLACK")
 	        .setTitle("Blague d'Humour Noir")
-	        .setAuthor({ name: 'Plido'})
+	        .setAuthor({ name: 'TATHAN'})
 	        .addFields(
 		        { name: 'Blague :', value:  blagueDark.joke},
 		        { name: 'Réponse', value: '||' + blagueDark.answer + '||', inline: false },
@@ -71,7 +71,7 @@ module.exports = {
             const devEmbed = new MessageEmbed()
 	        .setColor("BLUE")
 	        .setTitle("Blague de Dev")
-	        .setAuthor({ name: 'Plido'})
+	        .setAuthor({ name: 'TATHAN'})
 	        .addFields(
 		        { name: 'Blague :', value:  blagueDev.joke},
 		        { name: 'Réponse', value: '||' + blagueDev.answer + '||', inline: false },
@@ -86,7 +86,7 @@ module.exports = {
             const blondeEmbed = new MessageEmbed()
 	        .setColor("YELLOW")
 	        .setTitle("Blague sur les Blondes")
-	        .setAuthor({ name: 'Plido'})
+	        .setAuthor({ name: 'TATHAN'})
 	        .addFields(
 		        { name: 'Blague :', value:  blagueBlonde.joke},
 		        { name: 'Réponse', value: '||' + blagueBlonde.answer + '||', inline: false },
@@ -103,7 +103,7 @@ module.exports = {
             const limitEmbed = new MessageEmbed()
 	        .setColor("RED")
 	        .setTitle("Blague Limite")
-	        .setAuthor({ name: 'Plido'})
+	        .setAuthor({ name: 'TATHAN'})
 	        .addFields(
 		        { name: 'Blague :', value:  blagueLimit.joke},
 		        { name: 'Réponse', value: '||' + blagueLimit.answer + '||', inline: false },
@@ -119,7 +119,7 @@ module.exports = {
             const beaufEmbed = new MessageEmbed()
 	        .setColor("RED")
 	        .setTitle("Blague Limite")
-	        .setAuthor({ name: 'Plido'})
+	        .setAuthor({ name: 'TATHAN'})
 	        .addFields(
 		        { name: 'Blague :', value:  blagueBeauf.joke},
 		        { name: 'Réponse', value: '||' + blagueBeauf.answer + '||', inline: false },
@@ -135,7 +135,7 @@ module.exports = {
                 const randomGlobal = new MessageEmbed()
                 .setColor("GREEN")
                 .setTitle("Blague Global")
-                .setAuthor({ name: 'Plido'})
+                .setAuthor({ name: 'TATHAN'})
                 .addFields(
                     { name: 'Blague :', value:  blagueGlobal.joke},
                     { name: 'Réponse', value: '||' + blagueGlobal.answer + '||', inline: false },

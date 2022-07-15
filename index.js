@@ -94,12 +94,12 @@ var buttonsManager = {
 		.setColor("36FF00")
 		.setTitle("Niveau 1 Réussi !")
 		.setTimestamp()
-		.setDescription("🎉 **Félicitation**!\n Tu as réussi ce niveau! Cela se voit que tu n'es pas un inconscient. Tu peux maintenant continuer ton aventure en quête de ta chêvre !! Pour te récompenser de ton acte, tes parents te donnent **5** plidux :coin: (Ils seront utiles dans la suite de ta quête.).\n")
+		.setDescription("🎉 **Félicitation**!\n Tu as réussi ce niveau! Cela se voit que tu n'es pas un inconscient. Tu peux maintenant continuer ton aventure en quête de ta chêvre !! Pour te récompenser de ton acte, tes parents te donnent **5** tathanbucks :coin: (Ils seront utiles dans la suite de ta quête.).\n")
 		
 
 		 interaction.reply({ ephemeral: true, embeds: [level1Success]});
 		//Level + 1
-		bdd["adventure-level"][interaction.member.id] = 2
+		bdd["adventure-level"][interaction.member.id] = "2"
 		bdd["coins-user"][interaction.member.id] = 5;
 		Savebdd();
 	},
@@ -118,7 +118,7 @@ var buttonsManager = {
                         .setStyle('PRIMARY'),
 
                         new MessageButton()
-                        .setCustomId('level2-forest-back')
+                        .setCustomId('level2-river')
                         .setLabel('Traverser la rivière')
                         .setEmoji("🌊")
                         .setStyle('PRIMARY'),
@@ -162,7 +162,7 @@ var buttonsManager = {
 	
 					const chop = new MessageEmbed()
 					.setColor("36FF00")
-					.setTitle("Vous decidez d'aller acheter un bateau...")
+					.setTitle("Vous decidez d'aller voir le vendeur de bateau...")
 					.setTimestamp()
 					.setDescription("Vous approchez du vendeur :")
 					.addFields(
@@ -176,13 +176,114 @@ var buttonsManager = {
 					 interaction.reply({ embeds: [chop], ephemeral: true, components: [chopRow]});
 	},
 	"level2-forest-askGoat": function(interaction){
-		 interaction.reply({ content: "Tu veux vraiment faire demi-tour ? Pathétique...", ephemeral: true});
+		const askGoatRow = new MessageActionRow()
+					.addComponents(
+						new MessageButton()
+							.setCustomId('level2-forest-back')
+							.setLabel("Retourner à la maison")
+							.setEmoji("🏡")
+							.setStyle('PRIMARY'),
+	
+							new MessageButton()
+							.setCustomId('level2-forest-askBoat')
+							.setLabel('Demander pour un bateau')
+							.setEmoji("🛶")
+							.setStyle('PRIMARY'),
+					);
+	
+					const askGoat = new MessageEmbed()
+					.setColor("36FF00")
+					.setTitle("Vous decidez de lui demander pour votre chèvre...")
+					.setTimestamp()
+					.addFields(
+						{ name: `${interaction.user.name}`, value: "Avez-vous vu une chèvre passer ? !"},
+						{ name: `** Vendeur`, value: "Ho, tu parle d'une petite chèvre tacheté ?\n \n"},
+						{ name: `${interaction.user.name}`, value: "Oui, c'est ça ! Vous savez où elle est passée ?\n \n"},
+						{ name: `** Vendeur`, value: "Bien sur. Elle est monté dans le bateau d'un voyageur en direction de la Grande Ville \n \n"},
+						{ name: `${interaction.user.name}`, value: "Ah...\n \n"},
+						{ name: 'Choix', value: "deux choix sont possibles." },
+						{ name: '**1**', value: "Bon bah je vais rentrer chez moi... 🏡", inline: true },
+						{ name: '**2**', value: "Je voudrais un bateau pour passer. 🛶", inline: true },
+		
+					)
+					 interaction.reply({ embeds: [askGoat], ephemeral: true, components: [askGoatRow]});
 
 	},
 	"level2-forest-askBoat": function(interaction){
-		 interaction.reply({ content: "Tu veux vraiment faire demi-tour ? Pathétique...", ephemeral: true});
+		const askBoatRow = new MessageActionRow()
+					.addComponents(	
+							new MessageButton()
+							.setCustomId('level2-forest-buyBoat')
+							.setLabel('Acheter le bateau')
+							.setEmoji("👛")
+							.setStyle('PRIMARY'),
+					);
+	
+					const askBoat = new MessageEmbed()
+					.setColor("36FF00")
+					.setTitle("Vous decider d'acheter un bateau...")
+					.setTimestamp()
+					.addFields(
+						{ name: `${interaction.user.name}`, value: "Je vais alors vous acheter votre bateau le moins chère."},
+						{ name: `** Vendeur`, value: "Bien sur. Ce bateau gonflable ne coûte que 4 coins\n \n"},
+						{ name: `${interaction.user.name}`, value: "Super !\n \n"},
+		
+					)
+					 interaction.reply({ embeds: [askBoat], ephemeral: true, components: [askBoatRow]});
 
-	}
+					 bdd["coins-user"][interaction.member.id] = bdd["coins-user"][interaction.member.id] - 4;
+					 Savebdd();
+			 
+	}, 
+	"level2-forest-buyBoat": function(interaction){
+		const buyBoatRow = new MessageActionRow()
+		.addComponents(
+			new MessageButton()
+				.setCustomId('level2-forest-back')
+				.setLabel("Retourner à la maison")
+				.setEmoji("🏡")
+				.setStyle('PRIMARY'),
+
+				new MessageButton()
+				.setCustomId('level2-forest-success')
+				.setLabel('Passer la rivière')
+				.setEmoji("🛶")
+				.setStyle('PRIMARY'),
+		);
+	
+					const buyBoat = new MessageEmbed()
+					.setColor("36FF00")
+					.setTitle("Vous vous approchez de la rivière...")
+					.setTimestamp()
+					.setDescription(`Il ne reste qu'une chose à faire...`)
+					.addFields(
+						{ name: `Il ne reste qu'une chose à faire. `, value: ""},
+						{ name: 'Choix', value: "deux choix sont possibles." },
+						{ name: '**1**', value: "Gloups... Je pense que je vais revenir chez moi... 🏡", inline: true },
+						{ name: '**2**', value: "Cette rivière n'est qu'un obstacle entre moi et ma chèvre... J'y vais !🛶", inline: true },
+		
+					)
+					 interaction.reply({ embeds: [buyBoat], ephemeral: true, components: [buyBoatRow]});
+
+					 bdd["coins-user"][interaction.member.id] = bdd["coins-user"][interaction.member.id] - 4;
+					 Savebdd();
+			 
+	},
+	"level2-success": function(interaction){
+
+		const level2Success = new MessageEmbed()
+		.setColor("36FF00")
+		.setTitle("Niveau 2 Réussi !")
+		.setTimestamp()
+		.setDescription("🎉 **Félicitation**!\n Vous avez réussi ce niveau! Après quelques minutes de doutes, vous mettez votre bateau à l'eau et passé cette rivière. Vous voila de l'autre côté ! Après avoir rangé votre bâteau, vous repartez à l'aventure !")
+		
+
+		 interaction.reply({ ephemeral: true, embeds: [level2Success]});
+		//Level + 1
+		bdd["adventure-level"][interaction.member.id] == "3"
+		//bdd["coins-user"][interaction.member.id] = 5;
+		Savebdd();
+	},
 }
 
 //Buttons
