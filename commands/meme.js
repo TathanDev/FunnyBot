@@ -45,7 +45,10 @@ module.exports = {
             .setImage(url);
 
 
-            await interaction.reply({ embeds: [memeEmbed]  })
+            const message =  await interaction.reply({ embeds: [memeEmbed],
+                // fetchReply: true  
+             })
+           // message.react('🤣');
         }).catch(err => console.error(err));
 
 

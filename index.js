@@ -6,12 +6,10 @@ const bot = new Client({ intents: [Intents.FLAGS.GUILDS] });
 const bdd = require("./commands/bdd.json");
 
 
-
 bot.commands = new Collection();
 const commandsPath = path.join(__dirname, 'commands');
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
 
-//const bot = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
 bot.once('ready', () => {
 	console.log('Ready !');
@@ -245,7 +243,7 @@ var buttonsManager = {
 				.setStyle('PRIMARY'),
 
 				new MessageButton()
-				.setCustomId('level2-forest-success')
+				.setCustomId('level2-success')
 				.setLabel('Passer la rivière')
 				.setEmoji("🛶")
 				.setStyle('PRIMARY'),
@@ -257,7 +255,6 @@ var buttonsManager = {
 					.setTimestamp()
 					.setDescription(`Il ne reste qu'une chose à faire...`)
 					.addFields(
-						{ name: `Il ne reste qu'une chose à faire. `, value: ""},
 						{ name: 'Choix', value: "deux choix sont possibles." },
 						{ name: '**1**', value: "Gloups... Je pense que je vais revenir chez moi... 🏡", inline: true },
 						{ name: '**2**', value: "Cette rivière n'est qu'un obstacle entre moi et ma chèvre... J'y vais !🛶", inline: true },
@@ -283,7 +280,8 @@ var buttonsManager = {
 		bdd["adventure-level"][interaction.member.id] == "3"
 		//bdd["coins-user"][interaction.member.id] = 5;
 		Savebdd();
-	},
+	}
+	
 }
 
 //Buttons
@@ -298,20 +296,11 @@ bot.on('interactionCreate', async function(interaction) {
 		
 );
 
-		
-		
-
-	
-
 /** Functions */
 function Savebdd() {
     fs.writeFile("./commands/bdd.json", JSON.stringify(bdd, null, 4), (err) => {
         if (err) message.channel.send("Une erreur est survenue.");
     });
 }
-
-
-
-
 
 bot.login(token);

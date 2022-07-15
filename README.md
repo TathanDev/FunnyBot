@@ -17,6 +17,12 @@ Ce bot est la version 2.0 d'un vieux bot que j'avais créer.
 
 - ### Une Petite Aventure (En construction)
 
+  - Niveau 1 ✅
+  - Niveau 2 ✅
+  - Niveau 3 ❎
+  - La Carte ❎
+
+
 # Liens Utiles
 
 - [Lien de Download](https://discord.com/api/oauth2/authorize?client_id=995678135662166067&permissions=8&scope=applications.commands%20bot)
