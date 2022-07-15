@@ -17,24 +17,6 @@ function Savebdd() {
     });
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('level')
@@ -60,6 +42,7 @@ module.exports = {
         const value = interaction.options.getString('level');
 
 
+	if (bdd["adventure-level"][interaction.member.id] == null) {
 
         if (value == "1") {
 
@@ -183,6 +166,12 @@ module.exports = {
     } else {
 
         await interaction.reply({ephemeral: true, content: "Under Contruct"});
+
+    }
+
+    } else {
+
+        await interaction.reply({ephemeral: true, content: "Faite /start pour commencer votre aventure."});
 
     }
 
