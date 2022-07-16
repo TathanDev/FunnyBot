@@ -17,7 +17,7 @@ module.exports = {
             "meme",
             "memes",
             "animemes",
-            "MemesOfAnime",
+           // "MemesOfAnime",
            // "animememes",
            // "AnimeFunny",
             "dankmemes",
@@ -42,7 +42,8 @@ module.exports = {
             .setTitle("MEME")
             .setAuthor({ name: 'TATHAN'})
             .setTimestamp()
-            .setImage(url);
+            .setImage(url)
+            .setFooter("Meme de " + subreddit)
 
 
             const message =  await interaction.reply({ embeds: [memeEmbed],

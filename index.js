@@ -1,5 +1,5 @@
 const { Client, Collection, Intents, MessageEmbed, MessageActionRow, MessageButton} = require('discord.js');
-const { token } = require('./config.json');
+const { token, testToken } = require('./config.json');
 const fs = require('node:fs');
 const path = require('node:path');
 const bot = new Client({ intents: [Intents.FLAGS.GUILDS] });
@@ -13,6 +13,7 @@ const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('
 
 bot.once('ready', () => {
 	console.log('Ready !');
+	console.log(`Logged as ` + bot.user.username)
 	bot.user.setActivity('des Memes', { type: 'WATCHING' });
 
 });
@@ -98,8 +99,9 @@ var buttonsManager = {
 		 interaction.reply({ ephemeral: true, embeds: [level1Success]});
 		//Level + 1
 		bdd["adventure-level"][interaction.member.id] = "2"
-		bdd["coins-user"][interaction.member.id] = 5;
 		Savebdd();
+		bdd["coins-user"][interaction.member.id] = 5;
+		SaveIntbdd();
 	},
 	"level2-river": function(interaction){
 		interaction.reply({ content: "Vous pensez vraiment qu'il faut traverser une rivière seul ?\nMaintenant tu le sait. Mais tu vient de te noyer donc tu doit recommencer :). Try Again ", ephemeral: true});
@@ -303,4 +305,9 @@ function Savebdd() {
     });
 }
 
-bot.login(token);
+function SaveIntbdd() {
+    fs.writeFile("./commands/bdd.json", (bdd, null, 4), (err) => {
+        if (err) message.channel.send("Une erreur est survenue.");
+    });
+}
+bot.login(testToken);
