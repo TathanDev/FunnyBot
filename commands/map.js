@@ -22,7 +22,7 @@ module.exports = {
             .setTitle("MAP")
             .setAuthor({ name: 'TATHAN'})
             .setTimestamp()
-            .setImage("https://media.discordapp.net/attachments/714780801698496522/997505948237176932/aventure_map_1.png?width=960&height=540");
+            .setImage("https://cdn.discordapp.com/attachments/998147235365797910/998147345797623819/map1.png?width=960&height=540");
             
 
 
@@ -36,7 +36,7 @@ module.exports = {
                 .setTitle("MAP")
                 .setAuthor({ name: 'TATHAN'})
                 .setTimestamp()
-                .setImage(map2);
+                .setImage("https://cdn.discordapp.com/attachments/998147235365797910/998147346351276042/map2.png?width=960&height=540");
     
     
                 const message =  await interaction.reply({ embeds: [mapAventure2] })

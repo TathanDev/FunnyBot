@@ -15,12 +15,33 @@ Ce bot est la version 2.0 d'un vieux bot que j'avais créer.
 
 - ### Des Memes
 
+- ### Des animaux trop choupi
+
+  - Chat
+  - Panda
+  - Renard
+  - Chiens
+  - Oiseau
+  - Panda Roux
+  - Pikachu !!
+
 - ### Une Petite Aventure (En construction)
 
   - Niveau 1 ✅
   - Niveau 2 ✅
   - Niveau 3 ❎
-  - La Carte ❎
+  - La Carte ✅
+
+- ### Canva Commands 
+
+  - Comrade
+    ![Comrade Commande](https://images-ext-1.discordapp.net/external/WKlsr04539usf9gdRtL4BWiBU69x8vo-ETtekVmSxu0/%3Favatar%3Dhttps%3A%2F%2Fcdn.discordapp.com%2Favatars%2F626449013423734785%2Fa_156fdaeeb6630eb9f50f86bc9fba9fc1.gif/https/some-random-api.ml/canvas/comrade)
+  - Horny Card 
+    ![Horny Card Command](https://images-ext-1.discordapp.net/external/GcYpI3ZHpzSUMPmbttKxFy7WUlg-1coDJszp-bW3Z3s/%3Favatar%3Dhttps%3A%2F%2Fcdn.discordapp.com%2Favatars%2F626449013423734785%2Fa_156fdaeeb6630eb9f50f86bc9fba9fc1.png/https/some-random-api.ml/canvas/horny)
+  - Simp card 
+    ![Simp Card Command](https://images-ext-1.discordapp.net/external/fITtjepUUQeETDHUBNluxFmwssoRV8kv1V3hAnN12LI/%3Favatar%3Dhttps%3A%2F%2Fcdn.discordapp.com%2Favatars%2F626449013423734785%2Fa_156fdaeeb6630eb9f50f86bc9fba9fc1.gif/https/some-random-api.ml/canvas/simpcard)
+  - Pixelate
+    ![Pixelate commande](https://some-random-api.ml/canvas/pixelate?avatar=https://cdn.discordapp.com/avatars/626449013423734785/a_156fdaeeb6630eb9f50f86bc9fba9fc1.gif)
 
 
 # Liens Utiles
@@ -36,3 +57,12 @@ Si vous remarquez un bug, ouvrez une [issues](https://github.com/TathanDev/Funny
 - Le RP n'est pas finit.
 - Le /start est obligatoire pour commencer l'aventure
 - Les fautes d'Orthographes
+## Contributions
+
+Pour contribuer au bot, vous pouvez [fork](https://github.com/TathanDev/FunnyBot/fork) le projet et faire une [Pull request](https://github.com/TathanDev/FunnyBot/pulls).
+Si vous remarquez un bug, ouvrez une [issues](https://github.com/TathanDev/FunnyBot/issues)
+
+
+## Liste des bugs 
+- Le RP n'est pas finit.
+- Le /start est obligatoire pour commencer l'aventure
