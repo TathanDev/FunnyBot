@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@discordjs/rest": "^0.5.0",
+    "@iamtraction/google-translate": "^1.1.2",
     "axios": "^0.27.2",
     "blague.xyz": "^2.0.4",
     "blagues-api": "^2.1.0",
@@ -9,6 +10,7 @@
     "figlet": "^1.5.2",
     "fs": "^0.0.1-security",
     "images-generator": "^3.3.2",
+    "imdb-api": "^4.4.1",
     "random-puppy": "^1.1.0"
   }
 }
