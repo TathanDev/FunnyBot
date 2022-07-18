@@ -23,7 +23,7 @@ Ce bot est la version 2.0 d'un vieux bot que j'avais créer.
   - Chiens
   - Oiseau
   - Panda Roux
-  - Pikachu !!
+  - Pikachuuuuu !!
 
 - ### Une Petite Aventure (En construction)
 
@@ -31,6 +31,10 @@ Ce bot est la version 2.0 d'un vieux bot que j'avais créer.
   - Niveau 2 ✅
   - Niveau 3 ❎
   - La Carte ✅
+
+ - ### Faux youtube commentaires
+   
+   ![Youtube Comments](https://media.discordapp.net/attachments/998147235365797910/998523137748652032/unknown.png)
 
 - ### Canva Commands 
 
