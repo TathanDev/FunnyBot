@@ -4,6 +4,7 @@ const {
     MessageEmbed
 } = require('discord.js');
 const axios = require('axios');
+const gen = require("images-generator");
 
 
 module.exports = {
@@ -25,6 +26,12 @@ module.exports = {
                                 .setName('simp')
                                 .setDescription('Te Créer une Simp Carte')
                                 .addUserOption(option => option.setName('user').setDescription('Rejoins le Simp Club').setRequired(true)))
+        .addSubcommand(subcommand =>
+                            subcommand
+                                .setName('iphone_alert')
+                                .setDescription('Alerte !!')
+                                .addStringOption(option => option.setName('content').setDescription('Quelle est cette alerte ?').setRequired(true)))
+        
          .addSubcommand(subcommand =>
                                     subcommand
                                         .setName('pixelate')
@@ -45,7 +52,7 @@ module.exports = {
             .setImage(url)
             .setColor("RED")
         
-                interaction.reply({ embeds: [embed], ephemeral: true });  
+                interaction.reply({ embeds: [embed]});  
 
 		}
         
@@ -61,7 +68,7 @@ module.exports = {
             .setColor("RED")
 
         
-                interaction.reply({ embeds: [embed], ephemeral: true });  
+                interaction.reply({ embeds: [embed]});  
 
 		} else if (interaction.options.getSubcommand() === 'simp') {
 
@@ -75,7 +82,7 @@ module.exports = {
             .setColor("PURPLE")
             .setFooter(`${user} a rejoins le SIMP Club !`)
 
-            interaction.reply({ embeds: [embed], ephemeral: true });  
+            interaction.reply({ embeds: [embed]});  
 
 
         }else if (interaction.options.getSubcommand() === 'pixelate') {
@@ -90,6 +97,20 @@ module.exports = {
             .setColor("PURPLE")
 
             interaction.reply({ embeds: [embed], ephemeral: true });  
+
+        } else if (interaction.options.getSubcommand() === 'iphone_alert') {
+
+			const msg = interaction.options.getString('content');
+
+            const url = await gen.misc.iphoneAlert({content: msg})
+
+
+            const embed = new MessageEmbed()
+            .setTitle(`Alerte ! `)
+            .setImage(url)
+            .setColor("WHITE")
+
+            interaction.reply({ embeds: [embed] });  
         }
 
 		
