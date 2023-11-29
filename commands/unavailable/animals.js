@@ -3,8 +3,7 @@ const {
     MessageEmbed
 } = require('discord.js');
 const axios = require('axios');
-
- 
+const animals = require('random-animals-api'); 
 
 
 
@@ -76,6 +75,9 @@ module.exports = {
           
 
         const url = "https://some-random-api.ml/img/" + value;
+        animals.cat()
+        .then(url => console.log(url))
+        .catch((error) => console.error(error));
 
         let image, response;
         try {
@@ -91,7 +93,7 @@ module.exports = {
             .setColor(color)
             .setImage(image.link)
         
-                interaction.reply({ embeds: [embed], ephemeral: true });        
+      const message = await interaction.reply({ embeds: [embed], ephemeral: true });
             
 	},
 };

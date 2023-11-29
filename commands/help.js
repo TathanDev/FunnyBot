@@ -10,18 +10,18 @@ module.exports = {
 		.setName('help')
 		.setDescription("Un peu d'aide ?")
         .addStringOption(option => 
-            option.setName('categorie')
+            option.setName('categories')
             .setDescription('La Catégorie des commandes')
             .setRequired(true)
             .addChoices(
             { name: "Fun", value: 'joke' },
-            { name: 'Aventure', value: 'aventure' },
+            { name: 'Infos', value: 'infos' },
            // { name: 'Blgues sur les Blondes', value: 'blonde' },
             )),
 
 	async execute(interaction) {
 
-        const value = interaction.options.getString('categorie');
+        const value = interaction.options.getString('categories');
 
         if (value == "joke") {
 
@@ -32,32 +32,29 @@ module.exports = {
             .setTimestamp()
             .addFields(
                 { name:"/blague +  type de blague", value:"Génère une blague random avec le type demandé" },
-                { name:"/meme", value:"Génère un meme", inline: false }
+                { name:"/vdm", value:"Génére un VDM random", inline: false }
 
             )
 
             await interaction.reply({ embeds: [helpEmbed], ephemeral: true  })
 
 
-            } else if (value == "aventure") {
+        } else if (value == "infos") {
 
-                let helpEmbed = new MessageEmbed()
-                .setColor("GREEN")
-                .setTitle("Help AVENTURE")
-                .setDescription("Les differentes commandes pour la catégorie Aventure")
-                .setTimestamp()
-                .addFields(
-                    { name:"/start", value:"Permet de commencer votre aventure" },
-                    { name:"/level + level", value:"Permet de commencer le level demander", inline: false },
-                    { name:"/coins", value:"Permet de voir ton nombre de coins/tathanbucks/T-Bucks/etc...", inline: false }
-
+            let helpEmbed = new MessageEmbed()
+            .setColor("GREEN")
+            .setTitle("Infos")
+            .setDescription("Les differentes commandes pour la catégorie Infos")
+            .setTimestamp()
+            .addFields(
+                { name:"/imdb", value:"Permet d'avoir des informations sur un film\n**Example** : `/imdb Titanic`" },
+                { name:"/skin", value:"Permet d'avoir le skin d'un joueur minecraft\n**Example** : `/skin TATHAN_06`", inline: false }    
+            )
     
-                )
-    
-                await interaction.reply({ embeds: [helpEmbed], ephemeral: true  })
+            await interaction.reply({ embeds: [helpEmbed], ephemeral: true  })
     
 
-            }
+        }
 
 
 	},

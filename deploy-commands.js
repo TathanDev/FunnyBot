@@ -8,11 +8,7 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 
 
 /** Tycoon Commands */
-const commands = [
-	new SlashCommandBuilder().setName('start').setDescription('Commence ton aventure!'),
-	//new SlashCommandBuilder().setName('server').setDescription('Replies with server info!'),
-	//new SlashCommandBuilder().setName('user').setDescription('Replies with user info!'),
-]
+const commands = []
 	.map(command => command.toJSON());
 
 
@@ -27,6 +23,16 @@ for (const file of commandFiles) {
 
 const rest = new REST({ version: '9' }).setToken(testToken);
 
-rest.put(Routes.applicationGuildCommands(clientId, guildId), { body: commands })
-	.then(() => console.log('Sucessfully registered applicaticon commands.'))
+/** 
+rest.put(
+	Routes.applicationCommands(clientId),
+	{ body: commands },
+	).then(() => console.log('Sucessfully registered applicaticon commands.'))
 	.catch(console.error);
+*/
+rest.put(
+	Routes.applicationGuildCommands(clientId, guildId),
+	{ body: commands },
+	).then(() => console.log('Sucessfully registered applicaticon commands.'))
+	.catch(console.error);
+

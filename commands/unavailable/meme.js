@@ -9,7 +9,7 @@ const {
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('meme')
-		.setDescription('Juste un Meme'),
+		.setDescription('Juste un xMeme'),
 
 	async execute(interaction) {
 
@@ -33,10 +33,10 @@ module.exports = {
         ]
 
         let subreddit = reddit[Math.floor(Math.random() * reddit.length)];
-
+        console.log(subreddit)
 
         randomPuppy(subreddit).then(async url => {
-
+            console.log(url)
             const memeEmbed = new MessageEmbed()
             .setColor("GREEN")
             .setTitle("MEME")

@@ -6,11 +6,17 @@
     "blague.xyz": "^2.0.4",
     "blagues-api": "^2.1.0",
     "discord.js": "^13.8.1",
+    "easy-json-database": "^1.5.1",
     "fetch": "^1.1.0",
     "figlet": "^1.5.2",
     "fs": "^0.0.1-security",
     "images-generator": "^3.3.2",
     "imdb-api": "^4.4.1",
+    "jsndb": "^1.0.3",
+    "mysql": "^2.18.1",
+    "nekos-fun": "^1.1.2",
+    "node-json-db": "^2.3.0",
+    "random-animals-api": "^1.2.6",
     "random-puppy": "^1.1.0"
   }
 }
