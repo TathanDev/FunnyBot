@@ -1,5 +1,5 @@
 
-# TATHAN 2.0 (BETA)
+# TATHAN 2.0 (BETA) :)
 
 Ce bot est la version 2.0 d'un vieux bot que j'avais créer.
 
